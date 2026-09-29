@@ -1,0 +1,82 @@
+<div id="console"></div>
+
+    <!-- クリア後のメニュー -->
+    <div id="clearActions">
+        <div class="clear-title">--- ARG CLEAR ---</div>
+        <p style="color: #888; font-size: 12px; margin-bottom: 25px;">
+            最後までプレイいただき、ありがとうございました。<br>
+            ネタバレにご配慮いただきつつ、生存報告をお願いいたします。<br>
+          ※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。
+        </p>
+        <button class="action-btn btn-x" onclick="shareOnX()">X で生存報告をする</button>
+        <a href="feedback.html" class="action-btn">感想・アンケートへ</a>
+    </div>
+
+    <script>
+        const textSequence = [
+            "Initializing secure connection...",
+            "Authentication successful.",
+            "Answer received: MATERIAL",
+            "--------------------------------------------------",
+            "素晴らしい観察眼です。",
+            "細部まで目を凝らすその集中力。",
+            "好奇心に満ちた、その美しい眼球。",
+            "あなたがご自身で答えた通り、",
+            "あなたこそが当館の次期コレクションに最もふさわしい「素材」です。",
+            "--------------------------------------------------",
+            "Extracting browser fingerprint...",
+            "Done.",
+            "Acquiring IP address and physical location...",
+            "Done.",
+            "Generating biometric blueprint from webcam...",
+            "ERROR: User permission required.",
+            "Bypassing security protocols...",
+            "SUCCESS. Facial scan complete.",
+            "<span class='red-text'>【SYSTEM】回収チームを該当住所へ派遣しました。</span>",
+            "到着まで約 4 分 20 秒。",
+            "どうか、そのままの場所でお待ちください。",
+            "",
+            "——ようこそ、永遠のキャンバスの中へ。"
+        ];
+
+        const consoleDiv = document.getElementById('console');
+        const clearActions = document.getElementById('clearActions');
+        let lineIndex = 0;
+
+        function typeLine() {
+            if (lineIndex < textSequence.length) {
+                const p = document.createElement('div');
+                p.innerHTML = textSequence[lineIndex];
+                consoleDiv.appendChild(p);
+                
+                window.scrollTo(0, document.body.scrollHeight);
+
+                lineIndex++;
+                let delay = Math.random() * 800 + 400; 
+                if (lineIndex > 18) delay = 1500; 
+
+                setTimeout(typeLine, delay);
+            } else {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = "#200";
+                    setTimeout(() => { 
+                        document.body.style.backgroundColor = "#000"; 
+                        clearActions.style.opacity = 1;
+                        clearActions.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }, 2000);
+            }
+        }
+
+        function shareOnX() {
+            const postText = "……絵の具の匂いがする。\n彼らは、常に素材を追い求めている。\n\n#GalleryETERNAL #キャンバスの住人たち #ARG";
+            const text = encodeURIComponent(postText);
+            const siteUrl = "https://note.com/clear_snipe9202/n/n8f5504f3e0ad?app_launch=false";
+            const url = encodeURIComponent(siteUrl);
+            
+            const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        setTimeout(typeLine, 1000);
+    </script>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | Gallery ETERNAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        
+        :root { --bg-color: #ffffff; --text-main: #111111; --text-light: #666666; --border-color: #eeeeee; }
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: var(--bg-color); color: var(--text-main); line-height: 2.2; animation: fadeIn 1.2s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        a { color: inherit; text-decoration: none; transition: all 0.4s ease; }
+        a:hover { color: var(--text-light); }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 60px; background-color: rgba(255, 255, 255, 0.98); position: fixed; width: 100%; box-sizing: border-box; z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; letter-spacing: 4px; }
+        nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+        nav ul li { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+        nav ul li a:hover { letter-spacing: 3px; }
+
+        .page-header { padding-top: 150px; padding-bottom: 60px; text-align: center; }
+        .page-title { font-family: 'Cinzel', serif; font-size: 42px; letter-spacing: 6px; margin: 0; font-weight: 400; }
+        .page-subtitle { font-size: 12px; letter-spacing: 4px; color: var(--text-light); margin-top: 10px; }
+        .notice-text { text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 60px; letter-spacing: 1px; padding: 0 20px; }
+
+        .collection-container { max-width: 1100px; margin: 0 auto; padding: 0 20px 120px 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; }
+        .collection-item { display: flex; flex-direction: column; }
+        .item-image { width: 100%; height: 400px; background-color: #f5f5f5; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; color: #ccc; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; border: 1px solid var(--border-color); }
+        .item-meta { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+        .item-room { font-family: 'Cinzel', serif; font-size: 12px; color: var(--text-light); letter-spacing: 2px; display: block; margin-bottom: 5px; }
+        .item-title { font-size: 22px; margin: 0; font-weight: 400; letter-spacing: 2px; }
+        .item-desc { font-size: 14px; color: #444; line-height: 1.8; text-align: justify; }
+        .highlight-weird { font-weight: 600; color: #000; }
+
+        footer { padding: 60px 10%; text-align: center; background-color: #111; color: #fff; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 5px; margin-bottom: 20px; }
+        .copyright { font-size: 11px; color: #666; letter-spacing: 1px; }
+
+        /* スマホ用レスポンシブ設定 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; gap: 15px; position: relative; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .page-header { padding-top: 40px; padding-bottom: 30px; }
+            .collection-container { grid-template-columns: 1fr; gap: 40px; padding: 0 20px 60px 20px; }
+            .item-image { height: 250px; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Gallery ETERNAL</a>
+        <nav>
+            <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="access.html">Access</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1 class="page-title">COLLECTION</h1>
+        <div class="page-subtitle">所蔵作品録</div>
+    </div>
+
+    <div class="notice-text">
+        当館が所蔵するコレクションの一部をご紹介いたします。<br>
+        ※実地でのご鑑賞は、ご予約をいただいたメンバー様、および招待客のみに制限しております。
+    </div>
+
+    <div class="collection-container">
+        <article class="collection-item">
+            <div class="item-image" style="background: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover; filter: grayscale(50%);"></div>
+            <div class="item-meta">
+                <span class="item-room">EXHIBIT ROOM A</span>
+                <h2 class="item-title">静寂の叫び</h2>
+            </div>
+            <div class="item-desc">
+                当館の独自の保存処理技術が施された立体のインスタレーション。<span class="highlight-weird">素材が最後に残した豊かな感情</span>が、そのままの形で半永久的に保存されています。その造形美は、見る者を圧倒する「生命の静止」を体現しています。
+            </div>
+        </article>
+
+        <article class="collection-item">
+            <div class="item-image" style="background: url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover; filter: grayscale(70%) sepia(20%);"></div>
+            <div class="item-meta">
+                <span class="item-room">EXHIBIT ROOM B</span>
+                <h2 class="item-title">見つめる瞳</h2>
+            </div>
+            <div class="item-desc">
+                無数の「視線」をテーマにした絵画群。カンバスに描かれた瞳は、まるで生きているかのように鑑賞者を追従します。様々な年代のモデルから<span class="highlight-weird">丁寧に抽出された「生きた色素」</span>を使用することで、通常の絵の具では決して出せない深い潤いと生気を持つ傑作となりました。
+            </div>
+        </article>
+
+        <article class="collection-item">
+            <div class="item-image">[ CURRENTLY UNDER MAINTENANCE ]</div>
+            <div class="item-meta">
+                <span class="item-room">EXHIBIT ROOM C</span>
+                <h2 class="item-title">展示入れ替え中</h2>
+            </div>
+            <div class="item-desc">
+                現在、本区画は展示の入れ替え、および特殊メンテナンスのため閉鎖されております。<span class="highlight-weird">新たな「素材」の搬入と加工が完了次第</span>、次期コレクションとして公開予定です。より純度が高く、美しい作品のお披露目を今しばらくお待ちください。
+            </div>
+        </article>
+
+        <article class="collection-item">
+            <div class="item-image" style="background: #111; color: #fff;">[ ONLINE SPECIAL EXHIBITION ]</div>
+            <div class="item-meta">
+                <span class="item-room">VIRTUAL ROOM</span>
+                <h2 class="item-title">キャンバスの住人たち</h2>
+            </div>
+            <div class="item-desc">
+                現在開催中のオンライン特別展。最新の超高解像度スキャンにより、ご自宅からでも作品の「真の姿」を鑑賞可能です。この展示は単なる鑑賞の場ではなく、<span class="highlight-weird">私たちの作品作りにおける「次なる適性」を見出すための重要なプロセス</span>でもあります。
+                <br><br>
+                <a href="exhibition_room.html" style="font-size: 13px; letter-spacing: 2px; border-bottom: 1px solid #111; padding-bottom: 2px;">特別展示室へ入場する</a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-logo">Gallery ETERNAL
+        <div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。</div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>

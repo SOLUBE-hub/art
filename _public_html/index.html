@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery ETERNAL | 永遠を切り取る美術館</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        
+        :root { --bg-color: #ffffff; --text-main: #111111; --text-light: #666666; --accent: #e0e0e0; }
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: var(--bg-color); color: var(--text-main); line-height: 2; overflow-x: hidden; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        a { color: inherit; text-decoration: none; transition: all 0.4s ease; }
+        a:hover { color: var(--text-light); letter-spacing: 1px; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 60px; background-color: rgba(255, 255, 255, 0.98); position: fixed; width: 100%; box-sizing: border-box; z-index: 1000; }
+        .logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; letter-spacing: 4px; }
+        nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+        nav ul li { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .hero { height: 100vh; display: flex; align-items: center; padding: 0 10%; position: relative; }
+        .hero-text { flex: 1; z-index: 2; padding-right: 50px; background: rgba(255, 255, 255, 0.8); padding: 40px; }
+        .hero-image { position: absolute; top: 0; right: 0; width: 65%; height: 100%; background: url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; z-index: 1; }
+        .hero-title { font-family: 'Cinzel', serif; font-size: 64px; line-height: 1.1; margin: 0 0 20px 0; letter-spacing: 5px; }
+        .hero-subtitle { font-size: 16px; color: var(--text-light); margin-bottom: 40px; letter-spacing: 3px; }
+
+        .exhibition-section { padding: 120px 10%; background-color: #fcfcfc; display: flex; gap: 60px; align-items: center; }
+        .exhibition-info { flex: 1; }
+        .exhibition-visual { flex: 1; height: 500px; background: url('https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .section-label { font-size: 12px; letter-spacing: 4px; color: var(--text-light); margin-bottom: 20px; display: block; }
+        .exhibition-title { font-size: 36px; margin: 0 0 30px 0; font-weight: 400; letter-spacing: 2px; }
+        .btn-primary { display: inline-block; margin-top: 30px; padding: 18px 50px; background-color: var(--text-main); color: #ffffff !important; font-size: 14px; letter-spacing: 3px; border: 1px solid var(--text-main); }
+        .btn-primary:hover { background-color: transparent; color: var(--text-main) !important; letter-spacing: 3px; }
+
+        .grid-links { display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 10% 120px 10%; gap: 2px; background-color: #fcfcfc; }
+        .grid-item { background-color: #ffffff; padding: 80px 40px; text-align: center; border: 1px solid #f0f0f0; transition: transform 0.3s ease; }
+        .grid-item:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .grid-item h3 { font-family: 'Cinzel', serif; font-size: 20px; margin-bottom: 20px; letter-spacing: 2px; }
+        .grid-item p { font-size: 13px; color: var(--text-light); }
+
+        footer { padding: 60px 10%; text-align: center; background-color: #111; color: #fff; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 5px; margin-bottom: 20px; }
+        .copyright { font-size: 11px; color: #666; letter-spacing: 1px; }
+
+        /* スマホ用レスポンシブ共通設定 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; gap: 15px; position: relative; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 0 5%; flex-direction: column; justify-content: center; }
+            .hero-text { padding: 20px; background: rgba(255,255,255,0.9); text-align: center; }
+            .hero-title { font-size: 40px; }
+            .hero-image { width: 100%; opacity: 0.2; }
+            .grid-links, .exhibition-section { grid-template-columns: 1fr; flex-direction: column; padding: 30px 20px; gap: 30px; }
+            .exhibition-visual { height: 300px; width: 100%; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Gallery ETERNAL</a>
+        <nav>
+            <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="access.html">Access</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="hero-title">ART IS<br>ETERNAL.</h1>
+            <p class="hero-subtitle">美しさは、決して朽ちない。</p>
+            <p style="font-size: 14px; color: #555; max-width: 400px; margin: 0 auto;">
+                現代アートと古典が交差するインビテーション制ギャラリー。<br>
+                私たちは、作品と鑑賞者が完全に同化する究極の芸術体験を提供しています。
+            </p>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="exhibition-section">
+        <div class="exhibition-info">
+            <span class="section-label">SPECIAL ONLINE EXHIBITION</span>
+            <h2 class="exhibition-title">『キャンバスの住人たち』</h2>
+            <p style="font-size: 15px; color: #444; margin-bottom: 15px;">
+                当館が誇る最新の「超高解像度スキャン」技術により、肉眼では捉えきれない名画の細部をオンラインで公開。
+            </p>
+            <p style="font-size: 15px; color: #444;">
+                画面の奥深くまでズームし、筆のタッチ、そして絵の中に潜む<strong>『真の姿』</strong>をご自身の目でお確かめください。
+            </p>
+            <a href="exhibition_room.html" class="btn-primary">オンライン展示室へ入場する</a>
+        </div>
+        <div class="exhibition-visual"></div>
+    </section>
+
+    <section class="grid-links">
+        <a href="news.html" class="grid-item">
+            <h3>NEWS</h3>
+            <p>最新の展覧会情報、メンテナンスのお知らせ、その他重要事項はこちら。</p>
+        </a>
+        <a href="about.html" class="grid-item">
+            <h3>ABOUT US</h3>
+            <p>Gallery ETERNALの理念。私たちが求める「永遠の美」について。</p>
+        </a>
+        <a href="collection.html" class="grid-item">
+            <h3>COLLECTION</h3>
+            <p>厳選された素材を用いて構成された、当館独自の所蔵作品録。</p>
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Gallery ETERNAL
+        <div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。<span style="color: #333;">.</span></div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+
+</body>
+</html>

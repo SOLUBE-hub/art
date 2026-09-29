@@ -1,0 +1,23 @@
+<div class="login-box">
+        <h1>ENTER KEYWORD</h1>
+        <input type="text" id="keywordInput" autocomplete="off" spellcheck="false"><br>
+        <button onclick="checkPassword()">UNLOCK</button>
+        <div id="errorMsg"></div>
+    </div>
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('keywordInput').value.toUpperCase();
+            if (input === 'PREY') {
+                document.body.style.opacity = 0;
+                setTimeout(() => { window.location.href = 'work5.html'; }, 1000);
+            } else {
+                document.getElementById('errorMsg').innerText = 'ACCESS DENIED';
+                setTimeout(() => { document.getElementById('errorMsg').innerText = ''; }, 2000);
+            }
+        }
+    </script>
+ <footer>
+        <div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。</div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>

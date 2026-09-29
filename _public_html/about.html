@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gallery ETERNAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        
+        :root { --bg-color: #ffffff; --text-main: #111111; --text-light: #666666; --border-color: #eeeeee; }
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: var(--bg-color); color: var(--text-main); line-height: 2.2; animation: fadeIn 1.2s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        a { color: inherit; text-decoration: none; transition: all 0.4s ease; }
+        a:hover { color: var(--text-light); }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 60px; background-color: rgba(255, 255, 255, 0.98); position: fixed; width: 100%; box-sizing: border-box; z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; letter-spacing: 4px; }
+        nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+        nav ul li { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+        nav ul li a:hover { letter-spacing: 3px; }
+
+        .page-header { padding-top: 150px; padding-bottom: 60px; text-align: center; }
+        .page-title { font-family: 'Cinzel', serif; font-size: 42px; letter-spacing: 6px; margin: 0; font-weight: 400; }
+        .page-subtitle { font-size: 12px; letter-spacing: 4px; color: var(--text-light); margin-top: 10px; }
+
+        .about-container { max-width: 800px; margin: 0 auto; padding: 40px 20px 120px 20px; }
+        .statement-title { font-size: 28px; text-align: center; margin-bottom: 60px; letter-spacing: 3px; font-weight: 300; }
+        .statement-text { font-size: 15px; color: #333; text-align: justify; text-justify: inter-ideograph; margin-bottom: 80px; }
+        .statement-text p { margin-bottom: 2em; }
+        .highlight { font-weight: 600; color: #000; }
+
+        .image-block { width: 100%; height: 400px; background: url('https://images.unsplash.com/photo-1544605969-90bc3b94a82a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; margin-bottom: 80px; filter: grayscale(80%) contrast(120%); }
+        .director-signature { text-align: right; margin-top: 40px; font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 2px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        .director-title { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--text-light); display: block; margin-bottom: 5px; }
+
+        footer { padding: 60px 10%; text-align: center; background-color: #111; color: #fff; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 5px; margin-bottom: 20px; }
+        .copyright { font-size: 11px; color: #666; letter-spacing: 1px; }
+
+        /* スマホ用レスポンシブ設定 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; gap: 15px; position: relative; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .page-header { padding-top: 40px; padding-bottom: 30px; }
+            .statement-title { font-size: 22px; margin-bottom: 40px; }
+            .image-block { height: 250px; margin-bottom: 40px; }
+            .statement-text { margin-bottom: 40px; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Gallery ETERNAL</a>
+        <nav>
+            <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="access.html">Access</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1 class="page-title">ABOUT US</h1>
+        <div class="page-subtitle">永遠を切り取る場所</div>
+    </div>
+
+    <div class="about-container">
+        <h2 class="statement-title">美しさは、朽ちさせてはならない。</h2>
+        
+        <div class="statement-text">
+            <p>命は短く、芸術は長いと言われます。しかし、Gallery ETERNALが目指すのは、その境界線を完全に消失させることです。「美しさは朽ちるからこそ尊い」という旧来の価値観を、私たちは明確に否定します。</p>
+            <p>朽ちさせないこと。その瞬間の生命力や感情の揺らぎを、一切の劣化なくカンバスに定着させることこそが、真の芸術への敬意であると私たちは信じています。</p>
+            <p>当館では、古典的な絵画から現代の立体インスタレーションまで、独自の基準で選定した<span class="highlight">「最上級の素材」</span>を用いて、永遠の命を吹き込む展示を行っています。私たちの作品作りにおいて、妥協は許されません。素材となるものが持つ「生きた眼差し」や「脈打つ色彩」を、いかに鮮度を保ったまま作品として昇華させるかが、私たちの使命です。</p>
+        </div>
+
+        <div class="image-block"></div>
+
+        <div class="statement-text">
+            <p>Gallery ETERNALは、ただ芸術を鑑賞するための場所ではありません。私たちが提供するのは、<span class="highlight">作品と鑑賞者が完全に同化し、ひとつになる没入体験</span>です。</p>
+            <p>あなたが作品を見つめるとき、作品もまたあなたを見つめ返しています。そして、私たちのキュレーターもまた、あなたの持つ「適性」を深く観察しているのです。</p>
+            <p>永遠を恐れないでください。私たちの作品は、常に新しい「出会い」を、そして「新たな素材」を待ち望んでいます。</p>
+        </div>
+
+        <div class="director-signature">
+            <span class="director-title">Curator / Director</span>
+            E.T.
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">Gallery ETERNAL
+        <div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。</div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>

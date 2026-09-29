@@ -1,0 +1,89 @@
+<div class="viewer-header">
+        <div class="artwork-title-nav">No.05 - 未完成の肖像</div>
+        <div class="controls">
+            <button class="control-btn" id="zoomOut">-</button>
+            <button class="control-btn" id="zoomIn">+</button>
+        </div>
+    </div>
+
+    <div class="viewer-container" id="viewerContainer">
+        <div class="artwork-wrapper" id="artworkWrapper" style="transform: translate(0px, 0px) scale(1);">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" class="artwork-img" alt="未完成の肖像" draggable="false">
+            <div class="hidden-cipher">
+                [ A = 1, Z = 26 ]<br><br>
+                13 - 1 - 20 - 5 - 18 - 9 - 1 - 12
+            </div>
+        </div>
+    </div>
+
+    <div class="final-answer-box">
+        <div class="final-question">この絵に足りないものは何ですか？（英字）</div>
+        <input type="text" id="finalInput" autocomplete="off" spellcheck="false">
+        <button onclick="checkFinal()">SUBMIT</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('viewerContainer');
+        const wrapper = document.getElementById('artworkWrapper');
+        const btnZoomIn = document.getElementById('zoomIn');
+        const btnZoomOut = document.getElementById('zoomOut');
+        
+        let scale = 1, translateX = 0, translateY = 0;
+        let isDragging = false, startX, startY; 
+        const REVEAL_SCALE = 2.5; 
+        
+        function updateTransform() {
+            if (scale < 1) scale = 1; if (scale > 5) scale = 5;
+            if (scale === 1) { translateX = 0; translateY = 0; }
+            wrapper.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            if (scale >= REVEAL_SCALE) wrapper.classList.add('zoomed-in');
+            else wrapper.classList.remove('zoomed-in');
+        }
+
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault(); scale += e.deltaY * -0.005; updateTransform();
+        }, { passive: false });
+
+        btnZoomIn.addEventListener('click', () => { scale += 0.5; updateTransform(); });
+        btnZoomOut.addEventListener('click', () => { scale -= 0.5; updateTransform(); });
+
+        // PCマウス操作
+        container.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            if (scale > 1) { isDragging = true; startX = e.clientX - translateX; startY = e.clientY - translateY; }
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) { translateX = e.clientX - startX; translateY = e.clientY - startY; updateTransform(); }
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        // スマホタッチ操作
+        container.addEventListener('touchstart', (e) => {
+            if (scale > 1) {
+                isDragging = true;
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX; startY = touch.clientY - translateY;
+            }
+        }, { passive: false });
+        
+        container.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX; translateY = touch.clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+        
+        container.addEventListener('touchend', () => { isDragging = false; });
+
+        function checkFinal() {
+            const answer = document.getElementById('finalInput').value.toUpperCase();
+            if (answer === 'MATERIAL') {
+                window.location.href = 'ending.html';
+            } else {
+                document.getElementById('finalInput').value = '';
+                document.getElementById('finalInput').placeholder = 'INCORRECT';
+            }
+        }
+    </script>

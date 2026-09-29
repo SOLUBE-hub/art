@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古い洋館の窓 | Gallery ETERNAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: #050508; color: #e0e0e0; overflow: hidden; }
+        .viewer-header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; box-sizing: border-box; background: linear-gradient(rgba(5, 5, 8, 0.9), rgba(5, 5, 8, 0)); z-index: 100; pointer-events: none; }
+        .viewer-header > * { pointer-events: auto; }
+        .back-btn { font-size: 12px; letter-spacing: 3px; color: #bda25b; text-decoration: none; transition: color 0.3s; }
+        .back-btn:hover { color: #fff; }
+        .artwork-title-nav { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 4px; text-align: center; }
+        .controls { display: flex; gap: 15px; }
+        .control-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(189, 162, 91, 0.5); color: #bda25b; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.3s; }
+        .control-btn:hover { background: #bda25b; color: #000; }
+        .viewer-container { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; cursor: grab; }
+        .viewer-container:active { cursor: grabbing; }
+        /* チラつき防止を追加 */
+        .artwork-wrapper { position: relative; transform-origin: center center; transition: transform 0.1s ease-out; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+        .artwork-img { max-width: 90vw; max-height: 90vh; display: block; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        /* z-index: 10; を追加 */
+        .hidden-letter { position: absolute; top: 30%; left: 65%; font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: rgba(255, 255, 255, 0.03); pointer-events: none; text-shadow: 0 0 3px rgba(0,0,0,0.8); transform: scale(1); transition: opacity 0.3s; z-index: 10; }
+        .artwork-wrapper.zoomed-in .hidden-letter { color: rgba(255, 255, 255, 0.5); }
+        .hint-text { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: 3px; color: #555; pointer-events: none; z-index: 100; }
+
+        /* スマホ向けレイアウト調整 */
+        @media (max-width: 768px) {
+            .viewer-header { padding: 15px; flex-direction: column; gap: 10px; }
+            .hint-text { font-size: 9px; width: 90%; text-align: center; bottom: 15px; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+    <div class="viewer-header">
+        <a href="exhibition_room.html" class="back-btn">← BACK TO EXHIBITION</a>
+        <div class="artwork-title-nav">No.03 - 古い洋館の窓</div>
+        <div class="controls">
+            <button class="control-btn" id="zoomOut">-</button>
+            <button class="control-btn" id="zoomIn">+</button>
+        </div>
+    </div>
+    <div class="viewer-container" id="viewerContainer">
+        <div class="artwork-wrapper" id="artworkWrapper" style="transform: translate(0px, 0px) scale(1);">
+            <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" class="artwork-img" alt="古い洋館の窓" draggable="false">
+            <div class="hidden-letter" id="hiddenLetter">E</div>
+        </div>
+    </div>
+    <div class="hint-text">スクロールまたはボタンで画像を限界まで拡大してください。ドラッグで移動可能です。</div>
+    <script>
+        const container = document.getElementById('viewerContainer');
+        const wrapper = document.getElementById('artworkWrapper');
+        const btnZoomIn = document.getElementById('zoomIn');
+        const btnZoomOut = document.getElementById('zoomOut');
+        let scale = 1, translateX = 0, translateY = 0, isDragging = false, startX, startY;
+        const REVEAL_SCALE = 3.5; 
+        
+        function updateTransform() {
+            if (scale < 1) scale = 1; if (scale > 5) scale = 5;
+            if (scale === 1) { translateX = 0; translateY = 0; }
+            wrapper.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            if (scale >= REVEAL_SCALE) { wrapper.classList.add('zoomed-in'); } else { wrapper.classList.remove('zoomed-in'); }
+        }
+        
+        container.addEventListener('wheel', (e) => { e.preventDefault(); scale += e.deltaY * -0.005; updateTransform(); }, { passive: false });
+        btnZoomIn.addEventListener('click', () => { scale += 0.5; updateTransform(); });
+        btnZoomOut.addEventListener('click', () => { scale -= 0.5; updateTransform(); });
+        
+        // PCマウス操作
+        container.addEventListener('mousedown', (e) => { e.preventDefault(); if (scale > 1) { isDragging = true; startX = e.clientX - translateX; startY = e.clientY - translateY; } });
+        window.addEventListener('mousemove', (e) => { if (isDragging) { translateX = e.clientX - startX; translateY = e.clientY - startY; updateTransform(); } });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        // スマホ用タッチイベント（ドラッグ移動）
+        container.addEventListener('touchstart', (e) => {
+            if (scale > 1) {
+                isDragging = true;
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+            }
+        }, { passive: false });
+
+        container.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                e.preventDefault(); 
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+
+        container.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    </script>
+
+<footer style="text-align:center;padding:12px 0 8px;"><div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。</div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>

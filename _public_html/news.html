@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Gallery ETERNAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        
+        :root { --bg-color: #ffffff; --text-main: #111111; --text-light: #666666; --accent: #e0e0e0; --border-color: #eeeeee; }
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: var(--bg-color); color: var(--text-main); line-height: 2; animation: fadeIn 1s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        a { color: inherit; text-decoration: none; transition: all 0.4s ease; }
+        a:hover { color: var(--text-light); }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 60px; background-color: rgba(255, 255, 255, 0.98); position: fixed; width: 100%; box-sizing: border-box; z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; letter-spacing: 4px; }
+        nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+        nav ul li { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+        nav ul li a:hover { letter-spacing: 3px; }
+
+        .page-header { padding-top: 150px; padding-bottom: 60px; text-align: center; }
+        .page-title { font-family: 'Cinzel', serif; font-size: 42px; letter-spacing: 6px; margin: 0; font-weight: 400; }
+        .page-subtitle { font-size: 12px; letter-spacing: 4px; color: var(--text-light); margin-top: 10px; }
+
+        .news-container { max-width: 900px; margin: 0 auto; padding: 0 20px 100px 20px; }
+        .news-article { display: flex; padding: 60px 0; border-bottom: 1px solid var(--border-color); gap: 40px; }
+        .news-article:last-child { border-bottom: none; }
+        .news-meta { width: 150px; flex-shrink: 0; }
+        .news-date { font-family: 'Cinzel', serif; font-size: 14px; color: var(--text-light); letter-spacing: 1px; display: block; }
+        .news-category { font-size: 11px; letter-spacing: 2px; margin-top: 5px; color: var(--text-main); font-weight: 600; }
+        .news-content { flex: 1; }
+        .news-title { font-size: 20px; margin: 0 0 20px 0; font-weight: 400; letter-spacing: 1px; line-height: 1.5; }
+        .news-text { font-size: 14px; color: #444; margin-bottom: 1.5em; }
+        .read-more-link { font-size: 13px; letter-spacing: 2px; border-bottom: 1px solid var(--text-main); padding-bottom: 2px; display: inline-block; margin-top: 10px; }
+        .read-more-link:hover { color: var(--text-light); border-color: var(--text-light); }
+        .highlight-weird { color: #000; font-weight: 600; }
+
+        footer { padding: 60px 10%; text-align: center; background-color: #111; color: #fff; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 5px; margin-bottom: 20px; }
+        .copyright { font-size: 11px; color: #666; letter-spacing: 1px; }
+
+        /* スマホ用レスポンシブ設定 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; gap: 15px; position: relative; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .page-header { padding-top: 40px; padding-bottom: 30px; }
+            .news-article { flex-direction: column; gap: 10px; padding: 25px 0; }
+            .news-meta { width: 100%; display: flex; gap: 15px; align-items: baseline; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; margin-bottom: 10px; }
+            .news-category { margin-top: 0; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Gallery ETERNAL</a>
+        <nav>
+            <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="access.html">Access</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1 class="page-title">NEWS</h1>
+        <div class="page-subtitle">お知らせ・更新情報</div>
+    </div>
+
+    <div class="news-container">
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.09.25</span>
+                <div class="news-category">EXHIBITION</div>
+            </div>
+            <div class="news-content">
+                <h2 class="news-title">【重要】オンライン特別展『キャンバスの住人たち』開催のお知らせ</h2>
+                <div class="news-text">
+                    平素よりGallery ETERNALをご愛顧いただき、誠にありがとうございます。<br><br>
+                    当館では、最新の超高解像度スキャン技術を用いたオンライン特別展『キャンバスの住人たち』を期間限定で開催いたします。本展覧会では、肉眼では捉えきれない筆のタッチや、作者がキャンバスに込めた「真の姿」を、ご自宅のPCやスマートフォンから細部までご堪能いただけます。
+                </div>
+                <a href="exhibition_room.html" class="read-more-link">特別展示室へ入場する</a>
+            </div>
+        </article>
+
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.09.18</span>
+                <div class="news-category">INFO</div>
+            </div>
+            <div class="news-content">
+                <h2 class="news-title">ミュージアムカフェ「Palette」秋の限定メニューについて</h2>
+                <div class="news-text">
+                    ミュージアムカフェ「Palette」にて、9月20日より秋の限定メニューの提供を開始いたします。<br>
+                    今季は、ルネサンス期の色彩をモチーフにした「柘榴（ざくろ）とベリーのブラッドティー」や、キャンバスに見立てた真っ白なフロマージュなど、視覚でも楽しめるメニューをご用意いたしました。<br>
+                    <span style="font-size: 12px; color: #888;">※カフェのみのご利用はできません。ご来館予約をされたお客様のみのご案内となります。</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.09.05</span>
+                <div class="news-category">NOTICE</div>
+            </div>
+            <div class="news-content">
+                <h2 class="news-title">常設展示室Cブロックの閉鎖について</h2>
+                <div class="news-text">
+                    館内空調設備および<span class="highlight-weird">一部素材の劣化に伴う特殊メンテナンス</span>のため、当面の間、常設展示室Cブロックを閉鎖いたします。<br><br>
+                    再開の目処が立ち次第、改めて本ページにてご案内いたします。ご来館を予定されていたお客様にはご迷惑をおかけしますが、作品の品質保持のため、何卒ご理解賜りますようお願い申し上げます。
+                </div>
+            </div>
+        </article>
+
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.08.20</span>
+                <div class="news-category">SECURITY</div>
+            </div>
+            <div class="news-content">
+                <h2 class="news-title">当館への不正アクセスに関するご報告</h2>
+                <div class="news-text">
+                    8月18日未明、当館の旧サーバーに対し、外部からの不正アクセスが確認されました。速やかに通信を遮断し、現在は新システムへ移行しているため、オンライン展覧会等の閲覧に支障はございません。<br><br>
+                    なお、流出した可能性のあるデータは「一部の作品搬入記録」のみであり、<span class="highlight-weird">当館メンバー様の個人情報（住所、顔写真等の生体データ）</span>は別サーバーにて厳重に隔離・保管されているため、影響はございません。
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-logo">Gallery ETERNAL
+        <div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。</div>
+    
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>

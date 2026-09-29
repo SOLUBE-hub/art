@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特別展『キャンバスの住人たち』 | Gallery ETERNAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+        
+        :root { --bg-dark: #050508; --text-light: #e0e0e0; --gold: #bda25b; --border-dark: #222; }
+        body { margin: 0; padding: 0; font-family: 'Noto Serif JP', serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 2; background-image: radial-gradient(circle at 50% 0%, #1a1a24 0%, #050508 70%); background-attachment: fixed; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        a { color: inherit; text-decoration: none; transition: all 0.5s ease; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .return-link { font-size: 12px; letter-spacing: 3px; color: #888; display: flex; align-items: center; gap: 10px; }
+        .return-link:hover { color: var(--text-light); }
+        .exhibition-logo { font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: 4px; color: var(--gold); }
+
+        .exhibition-header { text-align: center; padding: 80px 20px 40px 20px; }
+        .subtitle { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 8px; color: var(--gold); margin-bottom: 20px; display: block; }
+        .title { font-size: 36px; font-weight: 300; letter-spacing: 10px; margin: 0 0 30px 0; text-shadow: 0 0 20px rgba(255,255,255,0.1); }
+        .description { font-size: 14px; color: #aaa; max-width: 600px; margin: 0 auto; line-height: 2.4; }
+
+        .gallery-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 50px; }
+        .artwork-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .frame { width: 100%; height: 320px; background-color: #111; border: 1px solid #333; padding: 15px; box-sizing: border-box; position: relative; transition: all 0.5s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .canvas { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.5s ease, filter 0.5s ease; filter: brightness(0.7) contrast(1.2); }
+        .artwork-card:hover .frame { border-color: var(--gold); box-shadow: 0 0 30px rgba(189, 162, 91, 0.2); }
+        .artwork-card:hover .canvas { transform: scale(1.02); filter: brightness(1) contrast(1.1); }
+        .artwork-info { margin-top: 20px; }
+        .artwork-no { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); letter-spacing: 3px; display: block; margin-bottom: 8px; }
+        .artwork-title { font-size: 18px; letter-spacing: 4px; margin: 0; font-weight: 300; }
+
+        .vip-entrance { text-align: center; padding: 40px 20px 100px 20px; }
+        .vip-link { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 6px; color: #555; text-decoration: none; border-bottom: 1px dashed transparent; transition: all 0.4s ease; }
+        .vip-link:hover { color: var(--gold); border-bottom: 1px dashed var(--gold); text-shadow: 0 0 15px rgba(189, 162, 91, 0.6); }
+
+        /* スマホ用レスポンシブ設定 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; gap: 15px; }
+            .gallery-container { grid-template-columns: 1fr; flex-direction: column; padding: 30px 20px; gap: 30px; }
+            .title { font-size: 24px; letter-spacing: 4px; }
+            .frame { height: 250px; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="return-link">← RETURN TO MAIN GALLERY</a>
+        <div class="exhibition-logo">Gallery ETERNAL</div>
+    </header>
+
+    <div class="exhibition-header">
+        <span class="subtitle">ONLINE SPECIAL EXHIBITION</span>
+        <h1 class="title">キャンバスの住人たち</h1>
+        <p class="description">
+            肉眼では捉えきれない深淵へようこそ。<br>
+            各作品をクリックし、超高解像度の世界へお入りください。<br>
+            限界までズームすることで、筆のタッチの裏側に潜む<strong>「真の姿」</strong>が浮かび上がるはずです。
+        </p>
+    </div>
+
+    <div class="gallery-container">
+        <a href="work1.html" class="artwork-card">
+            <div class="frame">
+                <div class="canvas" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+            <div class="artwork-info">
+                <span class="artwork-no">No. 01</span>
+                <h2 class="artwork-title">木漏れ日の森</h2>
+            </div>
+        </a>
+
+        <a href="work2.html" class="artwork-card">
+            <div class="frame">
+                <div class="canvas" style="background-image: url('https://images.unsplash.com/photo-1496262967815-132206202600?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+            <div class="artwork-info">
+                <span class="artwork-no">No. 02</span>
+                <h2 class="artwork-title">荒れる海</h2>
+            </div>
+        </a>
+
+        <a href="work3.html" class="artwork-card">
+            <div class="frame">
+                <div class="canvas" style="background-image: url('https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+            <div class="artwork-info">
+                <span class="artwork-no">No. 03</span>
+                <h2 class="artwork-title">古い洋館の窓</h2>
+            </div>
+        </a>
+
+        <a href="work4.html" class="artwork-card">
+            <div class="frame">
+                <div class="canvas" style="background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+            <div class="artwork-info">
+                <span class="artwork-no">No. 04</span>
+                <h2 class="artwork-title">星降る夜</h2>
+            </div>
+        </a>
+    </div>
+
+    <div class="vip-entrance">
+        <a href="vip_login.html" class="vip-link">VIP EXHIBITION ROOM (ENTER PASSWORD)</a>
+    </div>
+
+<footer style="text-align:center;padding:12px 0 8px;"><div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。<span style="color: #333;">.</span></div>
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>

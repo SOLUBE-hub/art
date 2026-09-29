@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご感想・アンケート | Gallery ETERNAL ARG</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
+        
+        body {
+            margin: 0; padding: 0; font-family: 'Noto Serif JP', serif;
+            background-color: #050508; color: #eee; line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px; margin: 60px auto; padding: 40px;
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid #333; border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            box-sizing: border-box; 
+        }
+
+        h1 {
+            font-size: 24px; text-align: center; letter-spacing: 2px;
+            border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px;
+            line-height: 1.5; color: #bda25b; text-shadow: 0 0 10px rgba(189, 162, 91, 0.2);
+        }
+
+        p.message {
+            font-size: 15px; color: #ffffff; margin-bottom: 40px; 
+            text-align: center; font-weight: 400; line-height: 2;
+        }
+
+        .form-container {
+            width: 100%; display: flex; justify-content: center; overflow: hidden; 
+            background: #fff; border-radius: 8px; padding-top: 10px;
+        }
+
+        .form-container iframe {
+            width: 100%; max-width: 700px; height: 900px; 
+            border: none; background-color: transparent;
+        }
+
+        .creator-info {
+            text-align: center; margin-top: 50px; font-size: 12px; color: #888;
+            border-top: 1px solid #333; padding-top: 20px;
+        }
+        .creator-info a { color: #bda25b; text-decoration: underline; }
+        
+        .return-btn {
+            display: block; width: 200px; margin: 40px auto 0 auto; padding: 12px;
+            background: transparent; color: #bda25b; border: 1px solid #bda25b; text-align: center;
+            text-decoration: none; font-size: 14px; letter-spacing: 2px; transition: 0.3s;
+        }
+        .return-btn:hover { background: #bda25b; color: #000; }
+
+        /* スマホ向けレイアウト調整 */
+        @media (max-width: 768px) {
+            .container { margin: 20px; padding: 25px 15px; }
+            h1 { font-size: 18px; letter-spacing: 1px; }
+            p.message { font-size: 13px; text-align: left; }
+            .form-container iframe { height: 1100px; /* スマホはフォームが縦に伸びるため高さを増やす */ }
+            .return-btn { width: 100%; box-sizing: border-box; }
+        }
+    </style>
+<link rel="stylesheet" href="assets/css/default.css">
+<meta name="generator" content="simple-item-master-three">
+</head>
+<body>
+
+    <div class="container">
+        <h1>短編ARG『キャンバスの住人たち』<br>プレイありがとうございました</h1>
+        
+        <p class="message">
+            無事に「素材」にならず生還できたでしょうか。<br>
+            本作はフィクションであり、実際にあなたの顔写真が登録されたり、スタッフが向かったりすることはありません。ご安心ください。<br><br>
+            今後の制作の励みになりますので、ぜひ以下のフォームよりご感想をお聞かせください。
+        </p>
+
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-RtpA1oKv8UYnqZVbt_7pjtp5HGulZRsJEUiodscCTkipNA/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </div>
+
+        <a href="index.html" class="return-btn">最初のページに戻る</a>
+
+        <div class="creator-info">
+            Created by 天乃橋 ソルベ<br>
+            X (Twitter): <a href="https://x.com/SORUBE_AMANO" target="_blank">@SORUBE_AMANO</a>
+        </div>
+    </div>
+
+<footer style="text-align:center;padding:12px 0 8px;"><div class="copyright">※本作はフィクションの短編ARG（代替現実ゲーム）です。実在の人物・団体・事件とは一切関係ありません。<span style="color: #333;">.</span></div>
+      <p class="yacho-powered-by" style="margin-top:8px;font-size:11px;opacity:.55;">Powered by <a href="https://sim3.net/yacho/" target="_blank" rel="noopener">YACHO(SIM3)</a></p>
+    </footer>
+</body>
+</html>
